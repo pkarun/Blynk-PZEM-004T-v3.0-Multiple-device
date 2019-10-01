@@ -4,6 +4,21 @@
  
 
 
+
+/***************************************************
+ *        NodeMCU Pin Assignment
+ **************************************************/
+
+#define RX_PIN_NODEMCU     D5        //Nodemcu pin, used has RX pin
+#define TX_PIN_NODEMCU     D6       //Nodemcu pin, used has TX pin
+
+/***************************************************
+ *        PZEM address value assignment 
+ **************************************************/
+
+ #define PZEM_SLAVE_1_ADDRESS     0x01     //make sure you assign address to pzem first before you use
+ #define PZEM_SLAVE_2_ADDRESS     0x02
+ 
 /***************************************************
  *        Blynk Virtual Pin Assignment
  **************************************************/
@@ -42,7 +57,7 @@
  *        Server Settings
  **************************************************/
       
-#define OTA_HOSTNAME "PZEM-004v3"
+#define OTA_HOSTNAME "PZEM-004T v3.0 Multiple Slave"
 
 
 // Remove/comment-out below 2 lines when use Blynk hosted server

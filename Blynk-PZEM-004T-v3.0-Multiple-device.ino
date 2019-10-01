@@ -44,9 +44,10 @@ SoftwareSerial pzemSerial(RX_PIN_NODEMCU, TX_PIN_NODEMCU); // (RX,TX) NodeMCU co
    address when we are working with muliple pzem device (multiple modbus devices/multiple slaves)
    You can use the changeAddress(OldAddress, Newaddress) function below in the code to assign new
    address to each pzem device first time.
+   
 */
-static uint8_t pzemSlave1Addr = 0x01; 
-static uint8_t pzemSlave2Addr = 0x02;
+static uint8_t pzemSlave1Addr = PZEM_SLAVE_1_ADDRESS; 
+static uint8_t pzemSlave2Addr = PZEM_SLAVE_2_ADDRESS;
 
 
 //ModbusMaster node;
@@ -130,7 +131,8 @@ void sendtoBlynk() {
 
 void pzemdata()
 {
-  // PZEM Device 1 data fetching 
+  // PZEM Device 1 data fetching
+  Serial.println("===================================================="); 
   Serial.println("Now checking Modbus 1");
   uint8_t result1;
 
@@ -164,7 +166,8 @@ void pzemdata()
   }
 
   
-  // PZEM Device 2 data fetching 
+  // PZEM Device 2 data fetching
+  Serial.println("===================================================="); 
   Serial.println("Now checking Modbus 2");
   uint8_t result2;
 
