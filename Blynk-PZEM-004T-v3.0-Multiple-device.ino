@@ -18,8 +18,8 @@
 
    PZEM 004T v3.0 to NodeMCU
    5v to vin
-   RX to D6
-   TX to D5
+   RX to D6 (TX Pin)
+   TX to D5 (RX Pin)
    GND to GND
 
 */
@@ -35,7 +35,7 @@
 
 
 #include <SoftwareSerial.h>  //  ( NODEMCU ESP8266 )
-SoftwareSerial pzemSerial(D5, D6); // (RX,TX) connect to TX,RX of PZEM for NodeMCU
+SoftwareSerial pzemSerial(RX_PIN_NODEMCU, TX_PIN_NODEMCU); // (RX,TX) NodeMCU connect to (TX,RX) of PZEM 
 //SoftwareSerial pzem(D7,D8);  // (RX,TX) connect to TX,RX of PZEM
 #include <ModbusMaster.h>
 
