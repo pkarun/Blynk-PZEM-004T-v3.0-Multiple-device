@@ -40,7 +40,7 @@ PZEM Device 2:
 
 5) Go to the settings.h tab. This is where all the customisable settings are. You should be able to change almost everything from there before compiling.
 
-<b>Note:<b>
+<b>Note:</b>
 
 For multiple PZEM 004T v3.0 device, first we need to assign address to each device or else this program won't work. Make sure you assign address to each PZEM device one by one by connection only one PZEM device to network/Nodemcu and upload our program and uncomment below line in the program.
 
