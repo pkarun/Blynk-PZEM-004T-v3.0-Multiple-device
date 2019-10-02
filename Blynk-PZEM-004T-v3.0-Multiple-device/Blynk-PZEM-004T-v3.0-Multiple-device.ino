@@ -57,8 +57,21 @@ ModbusMaster node2;
 
 BlynkTimer timer;
 
-double voltage_usage_1, current_usage_1, active_power_1, active_energy_1, frequency_1, power_factor_1, over_power_alarm_1; 
-double voltage_usage_2, current_usage_2, active_power_2, active_energy_2, frequency_2, power_factor_2, over_power_alarm_2;
+double voltage_usage_1 = 0; 
+double current_usage_1 = 0;
+double active_power_1 = 0;
+double active_energy_1 = 0;
+double frequency_1 = 0;
+double power_factor_1 = 0; 
+double over_power_alarm_1 = 0;
+ 
+double voltage_usage_2 = 0;
+double current_usage_2 = 0;
+double active_power_2 = 0;
+double active_energy_2 = 0;
+double frequency_2 = 0;
+double power_factor_2 = 0; 
+double over_power_alarm_2 = 0;
 
 
 void setup() {
@@ -163,8 +176,7 @@ void pzemdevice1()
 
   else {
     Serial.println("Failed to read modbus 1");
-    //delay(6000);
-
+   
   }
 }
 
