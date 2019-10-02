@@ -50,7 +50,7 @@ This task need to be done once only. Once address assignment is done, comment it
 
 <h2> Screenshot </h2>
 
-<img src="/images/project-screenshot-1.png" alt="project screenshot 1" title="project screenshot 1">
+<img src="/images/project-screenshot-1.png" alt="project screenshot 1" title="project screenshot 1" width="350" height="">
 <h2> Scan QR Code on Blynk App </h2>
 
 <img src="/images/blynk-scan-qr-code.png" alt="Blynk Project QR code" title="Blynk Project QR code">
