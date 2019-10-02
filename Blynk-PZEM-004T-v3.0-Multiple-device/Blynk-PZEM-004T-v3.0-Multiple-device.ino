@@ -129,7 +129,7 @@ void sendtoBlynk() {
 }
 
 
-void pzemdata()
+void pzemdevice1()
 {
   // PZEM Device 1 data fetching
   Serial.println("===================================================="); 
@@ -164,8 +164,11 @@ void pzemdata()
     //delay(6000);
 
   }
+}
 
-  
+ void pzemdevice2()
+ {
+   
   // PZEM Device 2 data fetching
   Serial.println("===================================================="); 
   Serial.println("Now checking Modbus 2");
@@ -251,7 +254,8 @@ void loop() {
   Blynk.run();
   ArduinoOTA.handle();
   timer.run();
-  pzemdata();
+  pzemdevice1();
+  pzemdevice2();
 
   delay(1000);
 }
