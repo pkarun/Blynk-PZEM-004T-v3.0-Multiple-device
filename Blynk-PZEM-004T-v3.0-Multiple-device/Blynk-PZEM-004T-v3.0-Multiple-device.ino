@@ -102,7 +102,7 @@ void setup() {
 
   timer.setInterval(10000L, sendtoBlynk); // send values blynk server every 10 sec
 
-  delay(1000);
+  //delay(1000);
 
 }
 
@@ -136,8 +136,10 @@ void pzemdevice1()
   Serial.println("Now checking Modbus 1");
   uint8_t result1;
 
+  ESP.wdtDisable();     //disable watchdog during modbus read or else ESP crashes when no slave connected                                               
   result1 = node1.readInputRegisters(0x0000, 10);
-
+  ESP.wdtEnable(1);    //enable watchdog during modbus read  
+  
   if (result1 == node1.ku8MBSuccess)
   {
     voltage_usage_1      = (node1.getResponseBuffer(0x00) / 10.0f);
@@ -173,9 +175,11 @@ void pzemdevice1()
   Serial.println("===================================================="); 
   Serial.println("Now checking Modbus 2");
   uint8_t result2;
-
+  
+  ESP.wdtDisable();
   result2 = node2.readInputRegisters(0x0000, 10);
-
+  ESP.wdtEnable(1);
+  
   if (result2 == node2.ku8MBSuccess)
   {
     voltage_usage_2      = (node2.getResponseBuffer(0x00) / 10.0f);
@@ -195,6 +199,8 @@ void pzemdevice1()
     Serial.print("POWER_FACTOR:      ");   Serial.println(power_factor_2);
     Serial.print("OVER_POWER_ALARM:  ");   Serial.println(over_power_alarm_2, 0);
     Serial.println("====================================================");
+
+    
   }
 
   else {
@@ -256,6 +262,5 @@ void loop() {
   timer.run();
   pzemdevice1();
   pzemdevice2();
-
   delay(1000);
 }
