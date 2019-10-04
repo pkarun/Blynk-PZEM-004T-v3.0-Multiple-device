@@ -24,8 +24,12 @@
 
 */
 
+
+
 //#include "settings.h" //Make sure you UNCOMMENT this before you use.
 #include "my_settings.h" //This is my personal settings. You can remove this line or comment-out when you are using.
+
+#define BLYNK_PRINT Serial // Enables Serial Monitor
 
 #include <ArduinoOTA.h>
 #include <BlynkSimpleEsp8266.h>
@@ -84,17 +88,24 @@ void setup() {
   node2.begin(pzemSlave2Addr, pzemSerial);
 
 
-  /* changeAddress(OldAddress, Newaddress)
+  /* 
+     changeAddress(OldAddress, Newaddress)
      By Uncomment the function in the below line you can change the slave address from one of the nodes (pzem device),
      only need to be done ones. Preverable do this only with 1 slave in the network.
      If you forgot or don't know the new address anymore, you can use the broadcast address 0XF8 as OldAddress to change the slave address.
      Use this with one slave ONLY in the network.
      This is the first step you have to do when connecting muliple pzem devices. If you haven't set the pzem address, then this program won't
      works.
+     1. Connect only one PZEM device to nodemcu and powerup your PZEM
+     2. uncomment the changeAddress function below i.e., changeAddress(OldAddress, Newaddress)
+     3. change the Newaddress value to some other value. Ex: 0x01, 0x02, 0x03 etc.,
+     4. upload the program to nodemcu 
+     5. if you see "Changing Slave Address" on serial monitor, then it successfully changed address 
+     6. if you don't see that message, then click on RESET button on nodemcu
 
   */
-
-  //changeAddress(0x01, 0x02);  //uncomment to set pzem address
+   
+  //changeAddress(0x01, 0x03);  //uncomment to set pzem address. You can press reset button on nodemcu if this function is not called
 
 
   //resetEnergy(0x01);
