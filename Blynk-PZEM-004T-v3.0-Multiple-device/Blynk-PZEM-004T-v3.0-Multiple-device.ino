@@ -26,10 +26,11 @@
 
 
 
-//#include "settings.h" //Make sure you UNCOMMENT this before you use.
-#include "my_settings.h" //This is my personal settings. You can remove this line or comment-out when you are using.
+//#define BLYNK_PRINT Serial        // Uncomment for debugging 
 
-#define BLYNK_PRINT Serial // Enables Serial Monitor
+#include "settings.h"           
+//#include "secret.h"               // <<--- UNCOMMENT this before you use and change values on config.h tab
+#include "my_secret.h"              // <<--- COMMENT-OUT or REMOVE this line before you use. This is my personal settings.
 
 #include <ArduinoOTA.h>
 #include <BlynkSimpleEsp8266.h>
